@@ -1,0 +1,4 @@
+How to remove branches already deleted on GitHub that still show up in VS Code?
+
+git fetch --prune
+or git fetch -p
