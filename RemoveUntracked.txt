@@ -1,0 +1,27 @@
+Certainly! When you use `git reset`, it doesn't directly remove untracked files or directories. Instead, it resets your working directory to the state of the last commit. To handle this situation, you can follow these steps:
+
+1. **Reset a Specific File:**
+   If you want to discard uncommitted changes in a specific file, use:
+   ```
+   git checkout <filename>
+   ```
+   Replace `<filename>` with the name of the file you want to reset.
+
+2. **Reset the Entire Repository:**
+   To reset the entire repository to the last committed state (discarding all uncommitted changes), use:
+   ```
+   git reset --hard
+   ```
+
+3. **Remove Untracked Files:**
+   To remove untracked files (including directories), you can use `git clean`. Be cautious with this command, as it permanently deletes untracked files:
+   ```
+   git clean -d -x -f
+   ```
+   - `-d`: Remove directories.
+   - `-x`: Delete files ignored by `.gitignore`.
+   - `-f`: Force the operation.
+
+   You can also use `-n` for a dry run (to see what will be removed) or `-i` for interactive mode.
+
+Remember to exercise caution when using these commands, especially if you have important untracked files or directories. Always double-check before executing any destructive actions. 😊
