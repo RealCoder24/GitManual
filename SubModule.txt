@@ -1,0 +1,24 @@
+Certainly! Git submodules allow you to include another Git repository as a subdirectory within your main project. This is useful when you want to use an external library or project within your own codebase while keeping them separate. Here’s how you can create a submodule in Git:
+
+[1] Add a New Submodule: To add a new submodule, use the git submodule add command with the absolute or relative URL of the project you want to track. For example, if you want to add a library called “DbConnector,” run the following command:
+
+git submodule add https://github.com/chaconinc/DbConnector
+
+By default, Git will add the subproject into a directory named the same as the repository (in this case, “DbConnector”). You can specify a different path if needed.
+
+[2] Check Status: After adding the submodule, check the status using git status. You’ll notice a new .gitmodules file, which stores the mapping between the submodule’s URL and the local subdirectory where you’ve pulled it into. This file is version-controlled along with your other files.
+
+[3] Commit Changes: Commit the changes to your repository. The .gitmodules file and the submodule directory will be part of your project.
+
+[4] Cloning with Submodules: When someone else clones your repository, they’ll need to initialize the submodule. Run the following commands:
+
+git submodule init
+git submodule update
+
+[5] Updating Submodules: If the upstream repository for the submodule makes changes, you can update your submodule by navigating to its directory and pulling the latest changes. Then commit the updated submodule reference in your main project.
+
+[6] If you commit something into the submodule, then you can directly use this command to know main project to use updated module  (without making a new commit)
+
+git submodule update
+
+Remember that submodules allow you to manage separate repositories within your project, making it easier to work with external dependencies while keeping your commits separate.
